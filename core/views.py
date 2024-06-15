@@ -7,11 +7,11 @@ from core.models import Post
 
 def post_list_view(request):
     posts = Post.objects.all()
-    return render(request,  template_name='posts_list.html', context={'posts': posts})
+    return render(request,  template_name='game_list.html', context={'posts': posts})
 
 
 class IndexView(TemplateView):
-    template_name = 'index.html'
+    template_name = 'game_list.html'
     form_class = Post
     success_url = '/'
 
@@ -38,7 +38,7 @@ class GameCreateView(CreateView):
 
 
 class PostDeleteView(DeleteView):
-    template_name = 'delete-game.html'
+    template_name = 'game_delete.html'
     model = Post
     success_url = '/'
 
