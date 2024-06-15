@@ -1,24 +1,24 @@
-{% extends "base.html" %}
-
-
-<html>
-<head>
-    <title>Post List</title>
-</head>
-<body>
-    <h1>Post List</h1>
-    <ul>
-        {% for post in posts %}
-            <li>
-                {{ post.title }} - {{ post.text }} - {{ post.author }} - {{ post.pegi }}
-                <form action="{% url 'post_delete' post.id %}" method="post" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'game_create' %}">Create new post</a>
-</body>
-</html>
+{#{% extends "base.html" %}#}
+{##}
+{##}
+{#<html>#}
+{#<head>#}
+{#    <title>Post List</title>#}
+{#</head>#}
+{#<body>#}
+{#    <h1>Post List</h1>#}
+{#    <ul>#}
+{#        {% for post in posts %}#}
+{#            <li>#}
+{#                {{ post.title }} - {{ post.text }} - {{ post.author }} - {{ post.pegi }}#}
+{#                <form action="{% url 'post_delete' post.id %}" method="post" style="display:inline;">#}
+{#                    {% csrf_token %}#}
+{#                    <button type="submit">Delete</button>#}
+{#                </form>#}
+{#            </li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    <a href="{% url 'game_create' %}">Create new post</a>#}
+{#</body>#}
+{#</html>#}
 

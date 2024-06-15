@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Title</th>
+                <th>Name</th>
                 <th>Author</th>
                 <th>Tags</th>
                 <th>Actions</th>
@@ -17,7 +17,7 @@
             {% for post in posts %}
                 <tr id="post-{{ post.id }}">
                     <td>{{ post.id }}</td>
-                    <td>{{ post.title }}</td>
+                    <td>{{ post.name }}</td>
                     <td>{{ post.author.username }}</td>
                     <td>
                         {% for tag in post.tags.all %}
@@ -25,7 +25,7 @@
                         {% endfor %}
                     </td>
                     <td>
-                        <a href="{% url 'post_delete' post.id %}" class="btn btn-danger">Удалить</a>
+                        <a href="{% url 'game_delete' post.id %}" class="btn btn-danger">Удалить</a>
                     </td>
                 </tr>
             {% endfor %}

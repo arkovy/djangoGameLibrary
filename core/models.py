@@ -26,15 +26,16 @@ class Post(TimeAbstractModel):
         (PEGI_HARD, 'Hard')
     )
 
-    title = models.CharField(max_length=100)
-    text = models.TextField()
+    name = models.CharField(max_length=100)
+    genre = models.CharField(max_length=100)
+    developer = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     tags = models.ManyToManyField('Tag')
     image = models.ImageField(upload_to=image_upload_to, blank=True, null=True)
-    pegi = models.PositiveSmallIntegerField(choices=PEGI_CHOICES)
+    difficulty = models.PositiveSmallIntegerField(choices=PEGI_CHOICES)
 
     def __str__(self):
-        return self.title
+        return self.name
 
     def save(self, *args, **kwargs):
         if self.pk:
